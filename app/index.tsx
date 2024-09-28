@@ -1,15 +1,7 @@
-import { Text, View } from "react-native";
+import { Href, Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Hello World.</Text>
-    </View>
-  );
+  const homeHref = "/home" as Href;
+
+  return <Redirect href={homeHref} />;
 }
