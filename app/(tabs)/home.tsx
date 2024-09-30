@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function home() {
   return (
-    <View>
-      <Text>Hello World</Text>
+    <View >
+      <Text style={{fontSize: 40, fontFamily:'outfit'}} >Hello World</Text>
     </View>
   )
 }
