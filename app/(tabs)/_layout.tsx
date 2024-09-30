@@ -4,10 +4,11 @@ import { Tabs } from 'expo-router'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Colors } from '@/constants/Colors';
 
 export default function _layout() {
   return (
-<Tabs screenOptions={{headerShown: false}} >
+<Tabs screenOptions={{headerShown: false, tabBarActiveTintColor: Colors.PRIMARY}} >
     <Tabs.Screen name='home' options={{
       tabBarLabel: 'Home',
       tabBarIcon:({color}) => <FontAwesome name="home" size={24} color="black" />
