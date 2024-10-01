@@ -4,7 +4,7 @@ import React from 'react'
 export default function home() {
   return (
     <View >
-      <Text style={{fontSize: 40, fontFamily:'outfit'}} >Hello World</Text>
+      <Text style={{fontSize: 40, fontFamily:'outfit-regular'}} >Hello World</Text>
     </View>
   )
 }
