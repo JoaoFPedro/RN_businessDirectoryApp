@@ -9,25 +9,14 @@ export default function LoginScreen() {
         source={require("../assets/images/login.png")}
         style={styles.image}
       ></Image>
-      <View
-        style={{
-          alignItems: "center",
-          flexDirection: "row",
-          paddingTop: 20,
-          marginTop: -20,
-          marginBottom: 5,
-          backgroundColor: "white",
-        }}
-      >
+      <View style={styles.subContainer}>
         <Text style={styles.mainText}>
           Your Ultimate{" "}
           <Text style={styles.highlight}>Community Business Directory</Text> App
         </Text>
       </View>
-      <View
-        style={{ alignContent: "center", paddingRight: 20, paddingLeft: 20 }}
-      >
-        <Text style={{ textAlign: "center", fontSize: 12 }}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textDescription}>
           Find your favorite business near your and post your own business to
           your community
         </Text>
@@ -47,6 +36,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     display: "flex",
   },
+  subContainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    paddingTop: 20,
+    marginTop: -20,
+    marginBottom: 5,
+    backgroundColor: "white",
+  },
+  textContainer: {
+    alignContent: "center",
+    paddingRight: 20,
+    paddingLeft: 20,
+  },
+  textDescription: {
+    textAlign: "center",
+    fontSize: 12,
+  },
   image: {
     width: 200,
     height: 450,
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
   },
 
   highlight: {
-    color: "purple", // Cor diferente para "Business"
+    color: "purple", 
     marginHorizontal: 5,
   },
 });
