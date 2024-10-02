@@ -21,8 +21,8 @@ export default function LoginScreen() {
           your community
         </Text>
 
-        <TouchableOpacity>
-          <Text>Lets que lets</Text>
+        <TouchableOpacity style={{alignItems:'center', borderRadius:18, backgroundColor:'#6a94ee', marginVertical:15, padding: 12}}>
+          <Text style={{fontSize:14 , textAlign:'center', color:'#ffffff'}}>Let's Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -31,7 +31,7 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 100,
+    marginTop: 90,
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
