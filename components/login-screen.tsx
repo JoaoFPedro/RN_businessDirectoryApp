@@ -74,7 +74,7 @@ export default function LoginScreen() {
           }}
           onPress={onGoogleSignIn}
         >
-           <Button title="Let's get started" />
+           <Button title="Let's get started" isLoading={isLoading}/>
             
            
         </TouchableOpacity>

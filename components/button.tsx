@@ -1,14 +1,15 @@
-import { Text, TouchableOpacity, TouchableOpacityProps,  StyleSheet } from "react-native"
+import { Text, TouchableOpacity, TouchableOpacityProps,  StyleSheet, ActivityIndicator } from "react-native"
 
 interface ButtonProps extends TouchableOpacityProps{
     title: string
     isLoading?: boolean
 }
 
-export function Button({title}: ButtonProps){
+export function Button({title, isLoading}: ButtonProps){
     return(
-        <TouchableOpacity>
-            <Text style={styles.container}>{title}</Text>
+        <TouchableOpacity disabled={isLoading}>
+            {isLoading ? <ActivityIndicator /> :  <Text style={styles.container}>{title}</Text>}
+           
         </TouchableOpacity>
     )
 }
