@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
+import { Button } from "./button";
 
 export default function LoginScreen() {
   return (
@@ -21,8 +22,18 @@ export default function LoginScreen() {
           your community
         </Text>
 
-        <TouchableOpacity style={{alignItems:'center', borderRadius:18, backgroundColor:'#6a94ee', marginVertical:15, padding: 12}}>
-          <Text style={{fontSize:14 , textAlign:'center', color:'#ffffff'}}>Let's Get Started</Text>
+        <TouchableOpacity
+          style={{
+            alignItems: "center",
+            borderRadius: 18,
+            backgroundColor: "#6a94ee",
+            marginVertical: 15,
+            padding: 12,
+          }}
+        >
+           <Button title="Let's get started"/>
+            
+           
         </TouchableOpacity>
       </View>
     </View>
@@ -71,7 +82,7 @@ const styles = StyleSheet.create({
   },
 
   highlight: {
-    color: "purple", 
+    color: "purple",
     marginHorizontal: 5,
   },
 });
