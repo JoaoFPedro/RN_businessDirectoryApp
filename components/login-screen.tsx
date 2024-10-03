@@ -2,50 +2,40 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Colors } from "@/constants/Colors";
 import { Button } from "./button";
-import * as WebBrowser from  'expo-web-browser'
+import * as WebBrowser from "expo-web-browser";
 import { useOAuth } from "@clerk/clerk-expo";
 
-
-
-WebBrowser.maybeCompleteAuthSession()
+WebBrowser.maybeCompleteAuthSession();
 export default function LoginScreen() {
+  const [isLoading, setIsLoading] = useState(false);
+  const googleOAuth = useOAuth({ strategy: "oauth_google" });
 
- 
-
-  const [isLoading, setIsLoading] = useState(false)
-  const googleOAuth = useOAuth({strategy:'oauth_google'})
-  
   async function onGoogleSignIn() {
-    console.log('ENTROU')
     try {
-      
-      setIsLoading(true)
-      const oAuthFlow = await googleOAuth.startOAuthFlow()
+      setIsLoading(true);
+      const oAuthFlow = await googleOAuth.startOAuthFlow();
 
-      if(oAuthFlow.authSessionResult?.type === 'success'){
-       if(oAuthFlow.setActive){
-        await oAuthFlow.setActive({session: oAuthFlow.createdSessionId})
-       }
-       else{
-        setIsLoading(false)
-       }
+      if (oAuthFlow.authSessionResult?.type === "success") {
+        if (oAuthFlow.setActive) {
+          await oAuthFlow.setActive({ session: oAuthFlow.createdSessionId });
+        } else {
+          setIsLoading(false);
+        }
       }
     } catch (error) {
-      console.log(error)
-      
-    }
-    finally{
-      setIsLoading(false)
+      console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
   useEffect(() => {
-    WebBrowser.warmUpAsync()
+    WebBrowser.warmUpAsync();
 
     return () => {
-      WebBrowser.coolDownAsync()
-    }
-  },[])
-  
+      WebBrowser.coolDownAsync();
+    };
+  }, []);
+
   return (
     <View style={styles.container}>
       <Image
@@ -74,9 +64,7 @@ export default function LoginScreen() {
           }}
           onPress={onGoogleSignIn}
         >
-           <Button title="Let's get started" isLoading={isLoading}/>
-            
-           
+          <Button title="Let's get started" isLoading={isLoading} />
         </TouchableOpacity>
       </View>
     </View>
