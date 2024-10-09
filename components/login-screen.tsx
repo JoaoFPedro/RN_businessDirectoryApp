@@ -64,7 +64,7 @@ export default function LoginScreen() {
           }}
           onPress={onGoogleSignIn}
         >
-          <Button title="Let's get started" isLoading={isLoading} />
+          <Text style={styles.button}>Lets Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -77,6 +77,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
+  },
+  button: {
+    fontSize: 14,
+    textAlign: "center",
+    color: "#ffffff",
   },
   subContainer: {
     alignItems: "center",
