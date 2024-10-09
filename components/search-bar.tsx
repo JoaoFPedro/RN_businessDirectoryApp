@@ -14,10 +14,11 @@ export default function SearchBar() {
         borderRadius: 8,
       }}
     >
-      
       <Feather name="search" size={24} color="black" />
-      <TextInput placeholder="Search..." style={{ padding: 4, width:'100%' }}></TextInput>
-      
+      <TextInput
+        placeholder="Search..."
+        style={{ padding: 4, width: "100%" }}
+      ></TextInput>
     </View>
   );
 }
